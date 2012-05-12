@@ -4,6 +4,7 @@
  *
  * @package		Captcha
  * @author		Michael Lavers
+ * @author		Verstov Andrey
  * @author		Kohana Team
  * @copyright	(c) 2008-2010 Kohana Team
  * @license		http://kohanaphp.com/license.html
