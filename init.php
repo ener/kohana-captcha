@@ -6,3 +6,4 @@ Route::set('captcha', 'captcha(/<group>)')
 		'controller' => 'captcha',
 		'action' => 'index',
 		'group' => NULL));
+

@@ -19,7 +19,7 @@ class Captcha_Word extends Captcha_Basic
 	public function generate_challenge()
 	{
 		// Load words from the current language and randomize them
-		$words = Kohana::config('captcha.words');
+		$words = Kohana::$config->load('captcha.words');
 		shuffle($words);
 
 		// Loop over each word...
