@@ -45,11 +45,11 @@ return array(
 	// Note: use only alphanumeric characters
 	'riddles' => array
 	(
-		array('Do you hate spam? (yes or no)', 'yes'),
-		array('Are you a robot? (yes or no)', 'no'),
-		array('Fire is... (hot or cold)', 'hot'),
-		array('The season after fall is...', 'winter'),
-		array('Which day of the week is it today?', strftime('%A')),
-		array('Which month of the year are we in?', strftime('%B')),
+		'Do you hate spam? (yes or no)'=>'yes',
+		'Are you a robot? (yes or no)'=>'no',
+		'Fire is... (hot or cold)'=>'hot',
+		'The season after fall is...'=>'winter',
+		'Which day of the week is it today?'=>('%A'),
+		'Which month of the year are we in?'=>strftime('%B'),
 	),
 );
