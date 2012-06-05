@@ -435,10 +435,10 @@ abstract class Captcha
 			return '<img src="'.url::site('captcha/'.Captcha::$config['group'], null, false).'" width="'.Captcha::$config['width'].'" height="'.Captcha::$config['height'].'" alt="Captcha" class="captcha" />';
 
 		// Send the correct HTTP header
-		Request::current()->headers('Content-Type', 'image/'.$this->image_type);
-		Request::current()->headers('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
-		Request::current()->headers('Pragma', 'no-cache');
-		Request::current()->headers('Connection', 'close');
+		header('Content-Type: image/'.$this->image_type);
+		header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+		header('Pragma: no-cache');
+		header('Connection: close');
 
 		// Pick the correct output function
 		$function = 'image'.$this->image_type;
@@ -446,7 +446,8 @@ abstract class Captcha
 
 		// Free up resources
 		imagedestroy($this->image);
-		return true;
+		Captcha::instance()->update_response_session();
+		die;
 	}
 
 	/* DRIVER METHODS */
